@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>sarah's Website</title>
+    <script src="signup.js"></script>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        /*banner*/
+        h1{
+            color: #5ed2ce;
+            position:relative;
+            padding-left: 40px;
+            font-size: 80px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .Banner { 
+            width: 100%;
+            height: 100vh; 
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url("banner.jpg");  
+            background-size: cover; 
+            background-position: center; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+        }
+        .Banner p{
+            color: grey;
+            padding-left: 40px;
+        }
+
+
+
+
+        /*functions section*/
+        .options{
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            padding: 60px;
+            background-color: (to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+        }
+        h3{
+            color: #5ed2ce;
+            font-size: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 0 auto;
+
+        }
+        p{
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .logo {
+            position:relative;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .subtitle p{
+            border: 2px solid;
+            border-color: #5ed2ce;
+            border-radius: 5px;
+            color: #5ed2ce;
+            padding: 50px;
+            margin: auto;
+            font-size: 30px;}
+        .subtitle{
+            display: flex;
+            flex-direction: row; 
+        }
+
+
+
+
+        
+        /*about us section*/
+        .About{
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+        }
+        .About p{       
+            color:  rgb(183, 183, 183);
+        }
+        .About button{
+            border-color: #5ed2ce;
+            color: #5ed2ce;
+            background-color: transparent;
+            border-radius: 5px;
+            padding: 15px;
+            width: 150px;
+        }
+        .About button:hover{
+            background-color: #82a7a6;
+            color: white;
+        }
+        .About button:active{
+            background-color:#5ed2ce;
+            color: white;
+        }
+        .About img {
+            max-height: 500px;
+            max-width: 100%; 
+            height: auto;
+            margin: 0 auto; 
+        }
+        .about{
+            padding:20px;
+        }
+        .sign {
+            display:none;
+        }
+
+        .sign.show{
+            display:inline-block;    
+        }
+        .dont{
+            font-size: 14px;
+        }
+
+
+
+        /*carousel*/
+        #testimony{
+            width: 100%;
+            height: 100vh; 
+            background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url("banner2.jpg");  
+            background-size: cover; 
+            background-position: center; 
+            display: flex; 
+            flex-direction: row;
+            justify-content: space-between; 
+            align-items: center;
+        }
+        .carousel-container {
+            width: 400px;
+            overflow: hidden;
+            position: relative;
+            margin-right:70px
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            flex: 0 0 100%;
+            margin-right: 10px;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border: none;
+            z-index: 1;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+
+
+
+        
+        hr {
+            border: 0;
+            height: 1px;
+            width: 70%;
+            background-color: #5ed2ce ;
+            margin: 50px auto;
+
+        }
+        .tours{
+            margin:0 auto;
+            display: flex;
+            flex-direction: row;
+        }
+        .tours img{
+           
+            width: 250px;
+            height: 350px;
+            border-radius: 7px;
+            margin: 20px;
+            border: 2px solid #5ed2ce;
+            transition: transform 0.3s ease;
+        }
+        .tours img:hover{
+            transform: scale(1.1);
+            filter: brightness(30%);
+        }
+        .caption{
+            color: gray;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            text-align: center;
+        }
+        .tours .details {
+            color: rgb(183, 183, 183);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 15px;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            position:absolute ;
+            transition: opacity 0.3s ease; 
+        }
+        .tour:hover .details {
+            opacity: 1;
+        }
+        .tour{
+            position: relative;
+        }
+        table{
+            text-align: center;
+            border-collapse: collapse; 
+            border-spacing: 0;
+            width: 100%;
+        }
+        td{
+            width: calc(100% / 4);
+            text-align: center;
+        }
+        .imgg1, .imgg2, .imgg3, .imgg0{
+            width: 100px;
+            height: 100px;
+        }
+        
+
+        .cityForm, .cityForm2, .cityForm3{
+           display: flex;
+           flex-direction: row ;
+           background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url("forms.jpg"); 
+           background-size: cover; 
+           background-position: center;  
+           justify-content: center;
+           align-items:center ;
+           max-height: 0px;
+           overflow: hidden;
+           box-shadow: #5ed2ce;
+           transition: max-height 0.5s ease;
+        }
+
+        .columnn{
+            padding: 20px;
+        }
+        .cityForm.show, .cityForm2.show , .cityForm3.show, #postedBlogs.show{
+            max-height: 600px;
+        }
+        label{
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: #5ed2ce;
+            font-size: 20px;
+            margin-bottom: 5px;
+            display: block;
+            text-align: left; 
+        }
+        input, textarea {
+            width: 200px;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+       
+        .contactus{
+            background-color:black;
+            height:400px
+        }
+
+        #subscribe{
+            background-color:rgb(18, 18, 18);
+            display: flex;
+            flex-direction: row;
+            padding: 20px;
+            margin-left: 100px;
+            margin-right: 100px;
+            justify-content: space-between;
+
+        }
+        #subscribe span{
+            color:#5ed2ce;
+        }
+        #email {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-bottom: 2px solid #545454;
+            background: transparent;
+            font-size: 16px;
+            color:white;
+            outline: none;
+        }
+        #email::placeholder {
+            color: rgb(134, 134, 134);
+        }
+        #plane{
+            background: transparent;
+            color:#5ed2ce;
+            border: none;
+            font-size: 25px;
+        }
+        h2{
+            font-size:30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+            text-align: center;
+        }
+        #contact {
+            color: #5ed2ce;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 30px;
+        }
+        #contact div {
+            border: 1px solid #5ed2ce;
+            padding:20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        
+
+
+
+
+        #submitadd, #submitdelete, #submitsearch, #submitt{
+            border: white;
+            background-color: #5ed2ce;
+            padding: 10px;
+            width: 90px;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        #submitadd:hover, #submitdelete:hover, #submitsearch:hover{
+            background-color: #82a7a6;
+        }
+        #submitadd:active, #submitdelete:active, #submitsearch:active{
+            background-color: #253231;
+            color:#5ed2ce
+        }
+
+
+        .posted-blogs{
+            background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url("forms.jpg"); 
+            background-size: cover; 
+            background-position: center;  
+            overflow: hidden;
+        }
+
+        #postedBlogs{  
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            align-items: center;
+            max-height: 0px;
+            overflow: hidden;
+            max-height: 400px;
+            overflow-x: auto;
+            justify-content: flex-start;
+            transition: max-height 0.5s ease;
+        }
+
+        
+        #postedBlogs p,ul,  #searchResultsContainer p,ul{
+            color: rgb(187, 187, 187);
+            font-family:sans-serif
+        }
+
+        #postedBlogs #results, #searchResultsContainer #results{
+            padding-right: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            margin: 20px;
+            border: 1px solid #5ed2ce;
+            border-radius: 2px;
+            white-space: normal;
+        }
+
+        #searchResultsContainer {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            align-items: center;
+            max-height: 0px;
+            overflow: hidden;
+            max-height: 400px;
+            overflow-x: auto;
+            justify-content: flex-start;
+            
+        }
+
+
+        #countriesmenu{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        #countriesmenu #resultsconts{
+            border: 1px solid #5ed2ce;
+            border-radius: 2px;
+            margin: 20px;
+            padding: 30px;
+            padding-right: 40px;
+            width: 100px; 
+            
+        }
+        #countriesmenu p{
+            color: #5ed2ce;
+            text-align: center;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        a{
+            color:#5ed2ce;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+        }
+
+
+
+        @media only screen and (min-width: 200px) and (max-width: 1200px) {
+            .About img {
+            display: none;
+            }
+            .tours{
+            margin:0 auto;
+            display: flex;
+            flex-direction: column;
+            }
+            .carousel{
+                display: none;
+            }
+    }
+    .adminform, .userform{
+        margin: 0 auto;
+        max-height: 0px;
+        overflow: hidden;
+    }
+    .adminform.show, .userform.show{
+        max-height: 300px;
+    }
+
+    #hide{
+        max-height: 0;
+        overflow: hidden;
+    }
+    #hide.show{
+        max-height: 100px;
+    }
+
+
+       
+
+    </style>
+</head>
+<body>
+    <div class="Banner">
+         <h1>LETS TRAVEL TOGETHER</h1>
+         <p>Embark on an exhilarating journey with us to discover the <br>hidden gems and iconic landmarks of the world's most vibrant cities.<br> Immerse yourself in rich cultures, tantalizing cuisines, and awe-inspiring sights. <br>Let's create unforgettable memories together!</p>
+
+    </div>
+    <br>
+    <table>
+        <tr>
+            <td><img class="imgg0" src="menu.png"></td>
+            <td><img id="hide" class="imgg1" src="add.png"></td>
+            <td><img id="hide" class="imgg2" src="remove.png"></td>
+            <td><img class="imgg3" src="search.png"></td>
+        </tr>  
+        <tr>
+        <td><h3>Menu</h3></td>
+        <td ><h3 id="hide">Add City</h3></td>
+        <td ><h3 id="hide">Remove City</h3></td>
+        <td><h3>Search City</h3></td>
+        </tr>
+    </table>
+
+    <br><br><br>
+
+    <div>
+        <form class="cityForm">
+            <div class="columnn">
+            <label for="cityName">City Name:</label>
+            <input type="text" id="cityName" name="cityName" required>
+            </div>
+        
+            <div class="columnn">
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" required>
+            </div>
+        
+            <div class="columnn">
+            <label for="population">Population:</label>
+            <input type="text" id="population" name="population" required>
+            </div>
+        
+            <div class="columnn">
+            <label for="placesToVisit">Places to Visit:</label>
+            <textarea id="placesToVisit" name="placesToVisit" rows="4" required></textarea>
+            </div>
+
+            <div class="columnn">
+            <label for="imageUrl">Image URL:</label>
+            <input type="text" id="imageUrl" name="imageUrl" required>
+            </div>
+        
+            <div class="columnn">
+            <button id="submitadd" onclick="submitJourney()">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <form class="cityForm2">
+            <div class="columnn">
+            <label for="dcityName">City Name:</label>
+            <input type="text" id="dcityName" >
+            </div>
+            <div class="columnn">
+                <button id="submitdelete" onclick="removeBlog()">Delete</button>
+            </div>
+    </div>
+
+    <div  class="cityForm3">
+        <form>
+            <div class="columnn">
+            <label for="scityName">Enter keyword:</label>
+            <input type="text" id="keyword" >
+            </div>
+
+            <div class="columnn">
+                <button id="submitsearch" onclick="searchBlog()"> Search </button>
+            </div>
+            
+    </div>
+
+
+    <div class="posted-blogs">
+       <div id="countriesmenu"></div> 
+       <div id="postedBlogs"></div>
+       <div id="searchResultsContainer"></div>
+    </div>
+    
+    <script>
+
+        function saveJourney(journey) {
+          let savedJourneys = JSON.parse(localStorage.getItem("journeys")) || [];
+          savedJourneys.push(journey);
+          localStorage.setItem("journeys", JSON.stringify(savedJourneys));
+        }
+
+
+        function submitJourney() {
+            event.preventDefault();
+
+          let name = document.getElementById("cityName").value;
+          let Country=document.getElementById("country").value;
+          let population=document.getElementById("population").value;
+          let places=document.getElementById("placesToVisit").value;
+          let imageURL = document.getElementById("imageUrl").value;
+         
+        if(name===""||Country===""||population===""|| places===""|| imageURL===""){
+            alert("Fields are required")
+        } else{
+
+          let journey = {
+            name,
+            Country,
+            population,
+            places,
+            imageURL
+          };
+            saveJourney(journey);
+            renderPostedBlogs();
+  
+            document.getElementById("cityForm").reset();
+        }
+         
+        }
+
+        function removeBlog() {
+            event.preventDefault();
+            let cityName = document.getElementById("dcityName").value;
+            if(cityName===""){
+            alert("Fields are required")
+            } else{
+
+          let savedJourneys = JSON.parse(localStorage.getItem("journeys")) || [];
+          savedJourneys = savedJourneys.filter( (journey) => journey.name !== cityName );
+
+          localStorage.setItem("journeys", JSON.stringify(savedJourneys));
+          renderPostedBlogs();
+          document.getElementById("cityForm2").reset();
+        }
+        }
+
+
+        function searchBlog() {
+            event.preventDefault();
+            let keyword = document.getElementById("keyword").value;
+            let postedBlogsContainer = document.getElementById("searchResultsContainer");
+            postedBlogsContainer.innerHTML = "";
+
+            if (keyword === "") {
+                alert("Fields are required");
+            }
+            else{
+
+            let savedJourneys = JSON.parse(localStorage.getItem("journeys")) || [];
+
+            let searchResults = savedJourneys.filter((journey) => {
+            return journey.name === keyword || journey.places === keyword || journey.Country === keyword
+            });
+            searchResults.forEach((journey)=>{
+            let placesList = journey.places.split(',').map(place => `<li>${place.trim()}</li>`).join('');
+
+            let blogDiv = document.createElement("div");
+            blogDiv.id = "results";
+
+            blogDiv.innerHTML =`<img src="${journey.imageURL}" width=200px/>
+                        <div style="padding-left: 10px;">
+                            <p><strong>City:</strong> ${journey.name}</p>
+                            <p><strong>Country:</strong> ${journey.Country}</p>
+                            <p><strong>Population:</strong> ${journey.population}</p>
+                            <p><strong>Places to visit:</strong></p>
+                            <ul>${placesList}</ul>
+                       </div>`;
+   
+            postedBlogsContainer.appendChild(blogDiv);
+            });
+
+            document.getElementById("cityForm3").reset();
+            }
+        }
+
+
+
+        function renderPostedBlogs() {
+        let postedBlogsContainer = document.getElementById("postedBlogs");
+        let savedJourneys = JSON.parse(localStorage.getItem("journeys")) || [];
+        
+
+        postedBlogsContainer.innerHTML = "";
+        savedJourneys.forEach((journey) => {
+
+            let placesList = journey.places.split(',').map(place => `<li>${place.trim()}</li>`).join('');
+            let blogDiv = document.createElement("div");
+            blogDiv.id = "results";
+            blogDiv.innerHTML =`<img src="${journey.imageURL}" width=200px/>
+                       <div style="padding-left: 10px;">
+                            <p><strong>City:</strong> ${journey.name}</p>
+                            <p><strong>Country:</strong> ${journey.Country}</p>
+                            <p><strong>Population:</strong> ${journey.population}</p>
+                            <p><strong>Places to visit:</strong></p>
+                            <ul>${placesList}</ul>
+                       </div>`;
+   
+            postedBlogsContainer.appendChild(blogDiv);
+          });
+        }
+
+        function showcountries(){
+            let countriesmenu= document.getElementById("countriesmenu");
+            let savedJourneys = JSON.parse(localStorage.getItem("journeys")) || [];
+            
+            countriesmenu.innerHTML = "";
+            let uniqueCountries = {};
+            savedJourneys.forEach((journey) => {
+
+                if (!uniqueCountries[journey.Country]) {
+                let countriesDiv = document.createElement("div");
+                countriesDiv.id = "resultsconts";
+                countriesDiv.innerHTML =`<div><p> ${journey.Country}</p></div>`
+                countriesmenu.appendChild(countriesDiv);
+                uniqueCountries[journey.Country] = true;
+
+                countriesDiv.addEventListener("click", function () {
+                displayCities(journey.Country);
+            });
+                }
+            });
+        }
+
+        function displayCities(country) {
+            let postedBlogsContainer = document.getElementById("postedBlogs");
+            let savedJourneys = JSON.parse(localStorage.getItem("journeys")) || [];
+
+            let countryJourneys = savedJourneys.filter((journey) => journey.Country === country);
+
+            postedBlogsContainer.innerHTML = "";
+
+            countryJourneys.forEach((journey) => {
+                let placesList = journey.places.split(',').map(place => `<li>${place.trim()}</li>`).join('');
+                let blogDiv = document.createElement("div");
+                blogDiv.id = "results";
+                blogDiv.innerHTML = `<img src="${journey.imageURL}" width=200px/>
+                            <div style="padding-left: 10px;">
+                                <p><strong>City:</strong> ${journey.name}</p>
+                                <p><strong>Country:</strong> ${journey.Country}</p>
+                                <p><strong>Population:</strong> ${journey.population}</p>
+                                <p><strong>Places to visit:</strong></p>
+                                <ul>${placesList}</ul>
+                            </div>`;
+            postedBlogsContainer.appendChild(blogDiv);
+        });
+}
+
+
+        
+        
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const menulogo= document.querySelector('.imgg0');
+        const addlogo = document.querySelector('.imgg1');
+        const removelogo =document.querySelector('.imgg2')
+        const searchlogo= document.querySelector('.imgg3');
+        const addform = document.querySelector('.cityForm'); 
+        const removeform = document.querySelector('.cityForm2')
+        const searchform =document.querySelector('.cityForm3')
+        let postedBlogsContainer = document.getElementById("postedBlogs");
+        let searchBlogsContainer = document.getElementById("searchResultsContainer");
+        let countriesmenu = document.getElementById("countriesmenu");
+
+
+                if(addlogo){
+                addlogo.addEventListener('click', function () {
+                addform.classList.toggle('show'); 
+                searchform.classList.remove('show');
+                removeform.classList.remove('show');
+                postedBlogsContainer.innerHTML = "";
+                searchBlogsContainer.innerHTML = "";
+                countriesmenu.innerHTML = "";
+                });
+                }
+                if(removelogo) {
+                    removelogo.addEventListener('click', function () {
+                    removeform.classList.toggle('show');
+                    addform.classList.remove('show');
+                    searchform.classList.remove('show');
+                    postedBlogsContainer.innerHTML = "";
+                    searchBlogsContainer.innerHTML = "";
+                    countriesmenu.innerHTML = "";
+                });
+                } 
+                if(searchlogo) {
+                    searchlogo.addEventListener('click', function () {
+                    searchform.classList.toggle('show');
+                    addform.classList.remove('show');
+                    removeform.classList.remove('show');
+                    postedBlogsContainer.innerHTML = "";
+                    searchBlogsContainer.innerHTML = "";
+                    countriesmenu.innerHTML = "";
+
+                });
+                } 
+                if (menulogo) {
+                menulogo.addEventListener('click', function () {
+                countriesmenu.classList.toggle('show');
+                    
+                if (countriesmenu.classList.contains('show')) {
+                    showcountries();
+                } else {
+                    countriesmenu.innerHTML = "";
+
+                }
+
+                    addform.classList.remove('show');
+                    removeform.classList.remove('show');
+                    searchform.classList.remove('show');
+                    searchBlogsContainer.innerHTML = "";
+                    postedBlogsContainer.innerHTML = "";
+                });
+                }
+        });
+    </script>
+<br>
+<hr>
+
+    <section class="About">
+        <img src="C:\Users\User\Desktop\WEBDEV PROJECT\Santorini.jpg">
+
+        <div class="about">
+        <h3>ABOUT US</h3>
+        <p>Welcome to City Explorer, your premier<br> destination for exploring the world's most<br> captivating cities! We are 
+        passionate about travel <br>and dedicated to providing you
+        with an unforgettable<br> journey of discovery.
+        Our mission is to ignite your sense<br> of wonder and curiosity,
+        guiding you through<br> the vibrant tapestry of cultures,
+        histories, and <br> landscapes that make each city unique. 
+        Whether<br> you're strolling along the cobblestone  streets <br>of Europe's
+        historic capitals, marveling at the towering <br>skyscrapers of bustling
+        metropolises, or immersing<br> yourself in the serene beauty of natural wonders,
+        <br>City Explorer is your trusted companion on the path <br>to exploration.</p>
+        <br>       
+
+        <button id="signin">sign in</button>
+        <p class="dont">Don't have  an account?</p>
+        <a href="createacc.html">Create Account</a><br>
+
+        <button id="admin" class="sign">Administrator</button>
+        <button id="user" class="sign">User</button>
+        </div>
+        <img src="C:\Users\User\Desktop\WEBDEV PROJECT\Dubai.jpg">
+        
+        </section>
+        
+
+        <div class="adminform">
+            <form> 
+                <div class="columnn">
+                    <label for="admin-username">Username</label>
+                    <input type="text" id="admin-username">
+                </div>
+                <div class="columnn">
+                    <label for="admin-pass">Password</label>
+                    <input type="text" id="admin-pass">
+                </div>
+                <div class="columnn">
+                    <button id="submitt" onclick="signIn()">Submit</button>
+                </div>  
+            </form>
+        </div>
+        
+        <div class="userform">
+            <form>
+                <div class="columnn">
+                    <label for="user-username">Username</label>
+                    <input type="text" id="user-username">
+                </div>
+                <div class="columnn">
+                    <label for="user-pass">Password</label>
+                    <input type="text" id="user-pass">
+                </div>
+                <div class="columnn">
+                    <button id="submitt" onclick="signIn()">Submit</button>
+                </div>  
+            </form>
+        </div>
+        
+        <script>
+        const hide = document.querySelector('hide');
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const signInBtn = document.getElementById('signin');
+                const adminButtons = document.querySelectorAll('.sign'); 
+                const adminForm = document.querySelector('.adminform');
+                const userForm = document.querySelector('.userform');
+
+        
+                signInBtn.addEventListener('click', function () {
+                    event.preventDefault();
+                    adminButtons.forEach(function(button) { 
+                        event.preventDefault();
+                        button.classList.toggle('show'); 
+                    });
+                });
+        
+                adminButtons.forEach(function(button) { 
+                    button.addEventListener('click', function () {
+                        event.preventDefault();
+
+                        if (button.textContent === "Administrator") {
+                            event.preventDefault();
+                            adminForm.classList.toggle('show');
+                            userForm.classList.remove('show');
+
+                        } else if (button.textContent === "User") {
+                            event.preventDefault();
+                            userForm.classList.toggle('show');
+                            adminForm.classList.remove('show');
+                        }
+                    });
+                });
+            });
+
+            button.addEventListener('click', function () {
+            event.preventDefault();
+            const userType = button.id; 
+            signIn(userType); 
+        });
+
+    function signIn(userType) {
+    event.preventDefault(); 
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    const matchedUser = users.find(user => user.username === username && user.password === password);
+
+    if (matchedUser) {
+        if (matchedUser.userType === userType) { 
+            alert('Login successful!');
+            if(userType==admin){
+                hide.classList.toggle('show');
+            }
+        } else {
+            alert('Invalid user type. Please select the correct user type.');
+        }
+    } else {
+        alert('Invalid username or password.');
+    }
+    }
+        </script>
+        
+        <hr>
+    <br><br>
+                <h3>POPULAR TOURS</h3>
+
+        <section class="tours">{
+
+            <div class="tour">
+            <img src="C:\Users\User\Desktop\WEBDEV PROJECT\vietnam.jpg">
+            <div class="caption">HA LONG BAY</div>
+            <div class="details">Discover the charm of Vietnam with our immersive tours, where you'll be captivated by its rich heritage and stunning scenery, creating memories that last a lifetime.</div>
+            </div>
+
+            <div class="tour">
+            <img src="C:\Users\User\Desktop\WEBDEV PROJECT\italy2.jpg">
+            <div class="caption">DOLOMITI</div>
+            <div class="details">Explore the majestic Dolomiti mountain range. From exhilarating hikes to scenic drives, discover the charm of the Dolomites as you traverse through picturesque valleys and towering peaks.</div>       
+            </div>
+
+            <div class="tour">
+            <img src="C:\Users\User\Desktop\WEBDEV PROJECT\Taj mahal.jpg">
+            <div class="caption">TAJ MAHAL</div>
+            <div class="details">Experience the breathtaking beauty and cultural significance of the Taj Mahal, an architectural marvel that stands as a symbol of eternal love. </div>
+            </div>
+
+            <div class="tour">
+            <img src="C:\Users\User\Desktop\WEBDEV PROJECT\switzerland.jpg">
+            <div class="caption">LUNGERN</div>
+            <div class="details">Indulge in the serene beauty of Lungern, a tranquil village nestled amidst the stunning Swiss Alps. Immerse yourself in the idyllic surroundings of crystal-clear lakes and lush green meadows.</div>
+        </div>
+        }
+
+        </section>
+
+<br><br><br>
+
+    <section id="testimony">
+        <h1>DISCOVER THE<br>WORLD IN A <br>NEW WAY</h1>
+
+        <div class="carousel-container">
+            <div class="carousel">
+
+
+                <div class="carousel-item">
+                    <img src="italy.jpg" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="italy2.jpg" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="italy3.jpg" alt="Image 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="beirut.jpg" alt="Image 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="china.jpg" alt="Image 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="greece.jpg" alt="Image 3">
+                </div>
+            
+
+
+            <button type="button" class="prev" onclick="prevSlide()">&#10094;</button>
+            <button type="button" class="next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </section>
+
+<br><br>
+
+    <section class="contactus">
+        <div id="subscribe">
+            <form onsubmit="validateAndSubmit(); return false;">
+                <label for="emailInput">Subscribe now to get<br>latest updates</label>
+                <div>
+                    <input type="text" id="email" placeholder="Email Address">
+                    <span id="errorMessage"></span>
+                </div>
+                <button type="submit" id="plane" onclick="validateAndSubmit()"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+<h2 style="color:#5ed2ce">CONTACT & JOIN US</h2>
+
+        <div id="contact">
+            
+            <div id="contactemail">
+                <i class="fas fa-envelope"></i>
+                <p><strong>Mail Address</strong></p>
+                <p style="color:#82a7a6">Sarahbashir@gmail.com</p>
+            </div>
+
+            <div id="contactphone">
+                <i class="fas fa-phone-alt"></i>
+                <p><strong>Call Us On</strong></p>
+                <p style="color:#82a7a6">+961 01234567</p>
+            </div>
+
+            <div id="contactlocation">
+                <i class="fas fa-map-marker-alt"></i>
+                <p><strong>Visit Us At</strong></p>
+                <p style="color:#82a7a6">Antonine University</p>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+       function validateAndSubmit() {
+    event.preventDefault(); // Prevent default form submission
+
+    var emailInput = document.getElementById("email");
+    var errorMessageSpan = document.getElementById("errorMessage");
+    var email = emailInput.value.trim();
+
+    errorMessageSpan.textContent = "";
+
+    if (email === "") {
+        errorMessageSpan.textContent = "Please enter your email.";
+        return; // Exit the function without further processing
+    }
+
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        errorMessageSpan.textContent = "Please enter a valid email address.";
+        return; // Exit the function without further processing
+    }
+
+    errorMessageSpan.textContent = "Subscription successful! Email: " + email;
+    emailInput.value = "";
+}
+        </script>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let currentIndex = 0;
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const totalSlides = carouselItems.length;
+        const carousel = document.querySelector('.carousel');
+
+        function showSlide(index) {
+            currentIndex = (index + totalSlides) % totalSlides;
+            const offset = -currentIndex * 100;
+            carousel.style.transition = 'transform 0.5s ease-in-out';
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        function autoSlide() {
+            setInterval(nextSlide, 3000);
+        }
+
+        showSlide(currentIndex);
+        autoSlide();
+    });
+</script>
+
+</body>
+</html>
