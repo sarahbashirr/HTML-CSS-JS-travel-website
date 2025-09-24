@@ -291,7 +291,71 @@
             max-height: 400px;
         }
 
-        /* Remove the responsive breakpoint - keep horizontal always */
+        /* Responsive glassmorphism forms */
+        .cityForm, .cityForm2, .cityForm3 {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-height: 0px;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 20px auto;
+        }
+
+        .cityForm.show, .cityForm2.show, .cityForm3.show {
+            max-height: 500px;
+        }
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .cityForm, .cityForm2, .cityForm3 {
+                flex-direction: column !important;
+                padding: 20px !important;
+                max-width: 90% !important;
+                margin: 10px auto !important;
+            }
+            
+            .cityForm.show, .cityForm2.show, .cityForm3.show {
+                max-height: 800px;
+            }
+            
+            .columnn {
+                width: 100% !important;
+                max-width: none !important;
+                padding: 10px 0 !important;
+            }
+            
+            input, textarea {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            
+            button {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cityForm, .cityForm2, .cityForm3 {
+                padding: 15px !important;
+                margin: 5px auto !important;
+            }
+            
+            h1 {
+                font-size: 60px !important;
+                padding-left: 20px !important;
+            }
+            
+            .Banner p {
+                padding-left: 20px !important;
+                font-size: 14px;
+            }
+        }
         
         label {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -518,58 +582,68 @@
     <br><br><br>
 
     <div>
-        <form class="cityForm">
-            <div class="columnn">
-                <label for="cityName">City Name:</label>
-                <input type="text" id="cityName" name="cityName" required>
+        <form class="cityForm" style="background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 2px solid rgba(94, 210, 206, 0.3); border-radius: 25px; box-shadow: 0 12px 40px rgba(94, 210, 206, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2); padding: 20px; max-width: 95%; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin: 0 auto;">
+            <div class="columnn" style="padding: 10px; flex: 1; min-width: 160px; max-width: 180px;">
+                <label for="cityName" style="color: rgba(94, 210, 206, 0.9); font-weight: 600; text-shadow: 0 2px 8px rgba(94, 210, 206, 0.3); margin-bottom: 8px; display: block; font-size: clamp(13px, 2vw, 15px);">City Name:</label>
+                <input type="text" id="cityName" name="cityName" placeholder="Enter city name" required 
+                       style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 2px solid rgba(94, 210, 206, 0.2); border-radius: 15px; padding: 10px 14px; color: #ffffff; box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.08), 0 4px 20px rgba(94, 210, 206, 0.08); transition: all 0.4s ease; width: 100%; box-sizing: border-box; font-size: 13px;">
             </div>
         
-            <div class="columnn">
-                <label for="country">Country:</label>
-                <input type="text" id="country" name="country" required>
+            <div class="columnn" style="padding: 10px; flex: 1; min-width: 160px; max-width: 180px;">
+                <label for="country" style="color: rgba(94, 210, 206, 0.9); font-weight: 600; text-shadow: 0 2px 8px rgba(94, 210, 206, 0.3); margin-bottom: 8px; display: block; font-size: clamp(13px, 2vw, 15px);">Country:</label>
+                <input type="text" id="country" name="country" placeholder="Enter country" required
+                       style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 2px solid rgba(94, 210, 206, 0.2); border-radius: 15px; padding: 10px 14px; color: #ffffff; box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.08), 0 4px 20px rgba(94, 210, 206, 0.08); transition: all 0.4s ease; width: 100%; box-sizing: border-box; font-size: 13px;">
             </div>
         
-            <div class="columnn">
-                <label for="population">Population:</label>
-                <input type="text" id="population" name="population" required>
+            <div class="columnn" style="padding: 10px; flex: 1; min-width: 160px; max-width: 180px;">
+                <label for="population" style="color: rgba(94, 210, 206, 0.9); font-weight: 600; text-shadow: 0 2px 8px rgba(94, 210, 206, 0.3); margin-bottom: 8px; display: block; font-size: clamp(13px, 2vw, 15px);">Population:</label>
+                <input type="text" id="population" name="population" placeholder="Enter population" required
+                       style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 2px solid rgba(94, 210, 206, 0.2); border-radius: 15px; padding: 10px 14px; color: #ffffff; box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.08), 0 4px 20px rgba(94, 210, 206, 0.08); transition: all 0.4s ease; width: 100%; box-sizing: border-box; font-size: 13px;">
             </div>
         
-            <div class="columnn">
-                <label for="placesToVisit">Places to Visit:</label>
-                <textarea id="placesToVisit" name="placesToVisit" rows="4" required></textarea>
+            <div class="columnn" style="padding: 10px; flex: 1; min-width: 160px; max-width: 180px;">
+                <label for="placesToVisit" style="color: rgba(94, 210, 206, 0.9); font-weight: 600; text-shadow: 0 2px 8px rgba(94, 210, 206, 0.3); margin-bottom: 8px; display: block; font-size: clamp(13px, 2vw, 15px);">Places:</label>
+                <textarea id="placesToVisit" name="placesToVisit" rows="2" placeholder="Enter places" required
+                          style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 2px solid rgba(94, 210, 206, 0.2); border-radius: 15px; padding: 10px 14px; color: #ffffff; box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.08), 0 4px 20px rgba(94, 210, 206, 0.08); transition: all 0.4s ease; width: 100%; box-sizing: border-box; resize: vertical; font-size: 13px; min-height: 60px;"></textarea>
             </div>
 
-            <div class="columnn">
-                <label for="imageUrl">Image URL:</label>
-                <input type="text" id="imageUrl" name="imageUrl" required>
+            <div class="columnn" style="padding: 10px; flex: 1; min-width: 160px; max-width: 180px;">
+                <label for="imageUrl" style="color: rgba(94, 210, 206, 0.9); font-weight: 600; text-shadow: 0 2px 8px rgba(94, 210, 206, 0.3); margin-bottom: 8px; display: block; font-size: clamp(13px, 2vw, 15px);">Image URL:</label>
+                <input type="text" id="imageUrl" name="imageUrl" placeholder="Enter image URL" required
+                       style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 2px solid rgba(94, 210, 206, 0.2); border-radius: 15px; padding: 10px 14px; color: #ffffff; box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.08), 0 4px 20px rgba(94, 210, 206, 0.08); transition: all 0.4s ease; width: 100%; box-sizing: border-box; font-size: 13px;">
             </div>
         
-            <div class="columnn">
-                <button type="button" id="submitadd" onclick="submitJourney()">Submit</button>
+            <div class="columnn" style="padding: 10px; flex: 0 0 auto; min-width: 100px; max-width: 120px; display: flex; align-items: flex-end;">
+                <button type="button" id="submitadd" onclick="submitJourney()" 
+                        style="background: linear-gradient(135deg, rgba(94, 210, 206, 0.9) 0%, rgba(130, 167, 166, 0.8) 100%); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 2px solid rgba(94, 210, 206, 0.4); border-radius: 15px; padding: 12px 18px; width: 100%; color: #ffffff; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; box-shadow: 0 6px 20px rgba(94, 210, 206, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3); transition: all 0.4s ease; font-size: clamp(11px, 1.5vw, 13px); height: fit-content;">Submit</button>
             </div>
         </form>
     </div>
     
     <div>
-        <form class="cityForm2">
-            <div class="columnn">
-                <label for="dcityName">City Name:</label>
-                <input type="text" id="dcityName">
+        <form class="cityForm2" style="background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 2px solid rgba(94, 210, 206, 0.3); border-radius: 25px; box-shadow: 0 12px 40px rgba(94, 210, 206, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
+            <div class="columnn" style="padding: 20px 15px;">
+                <label for="dcityName" style="color: rgba(94, 210, 206, 0.9); font-weight: 600; text-shadow: 0 2px 8px rgba(94, 210, 206, 0.3); margin-bottom: 8px; display: block;">City Name:</label>
+                <input type="text" id="dcityName" placeholder="Enter city name to delete"
+                       style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 2px solid rgba(94, 210, 206, 0.2); border-radius: 18px; padding: 14px 18px; color: #ffffff; box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.08), 0 4px 20px rgba(94, 210, 206, 0.08); transition: all 0.4s ease; width: 100%; max-width: 180px; box-sizing: border-box;">
             </div>
-            <div class="columnn">
-                <button type="button" id="submitdelete" onclick="removeBlog()">Delete</button>
+            <div class="columnn" style="padding: 20px 15px;">
+                <button type="button" id="submitdelete" onclick="removeBlog()"
+                        style="background: linear-gradient(135deg, rgba(94, 210, 206, 0.9) 0%, rgba(130, 167, 166, 0.8) 100%); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 2px solid rgba(94, 210, 206, 0.4); border-radius: 18px; padding: 14px 22px; width: 100%; max-width: 110px; color: #ffffff; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; box-shadow: 0 6px 20px rgba(94, 210, 206, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3); transition: all 0.4s ease;">Delete</button>
             </div>
         </form>
     </div>
 
-    <div class="cityForm3">
+    <div class="cityForm3" style="background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 2px solid rgba(94, 210, 206, 0.3); border-radius: 25px; box-shadow: 0 12px 40px rgba(94, 210, 206, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
         <form>
-            <div class="columnn">
-                <label for="keyword">Enter keyword:</label>
-                <input type="text" id="keyword">
+            <div class="columnn" style="padding: 20px 15px;">
+                <label for="keyword" style="color: rgba(94, 210, 206, 0.9); font-weight: 600; text-shadow: 0 2px 8px rgba(94, 210, 206, 0.3); margin-bottom: 8px; display: block;">Enter keyword:</label>
+                <input type="text" id="keyword" placeholder="Search by city, country, or place"
+                       style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 2px solid rgba(94, 210, 206, 0.2); border-radius: 18px; padding: 14px 18px; color: #ffffff; box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.08), 0 4px 20px rgba(94, 210, 206, 0.08); transition: all 0.4s ease; width: 100%; max-width: 180px; box-sizing: border-box;">
             </div>
-            <div class="columnn">
-                <button type="button" id="submitsearch" onclick="searchBlog()">Search</button>
+            <div class="columnn" style="padding: 20px 15px;">
+                <button type="button" id="submitsearch" onclick="searchBlog()"
+                        style="background: linear-gradient(135deg, rgba(94, 210, 206, 0.9) 0%, rgba(130, 167, 166, 0.8) 100%); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 2px solid rgba(94, 210, 206, 0.4); border-radius: 18px; padding: 14px 22px; width: 100%; max-width: 110px; color: #ffffff; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; box-shadow: 0 6px 20px rgba(94, 210, 206, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3); transition: all 0.4s ease;">Search</button>
             </div>
         </form>
     </div>
